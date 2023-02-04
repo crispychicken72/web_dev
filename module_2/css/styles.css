@@ -20,6 +20,17 @@ body {
   margin: 15px;
   background-color: gray; 
   border: 1px solid black;
+  height: 100px;
+  overflow: hidden;
+}
+
+/* NOTE: 2.2 states Constrain the height of each of the boxes. 
+Place enough content into each box such that the content would NOT fit 
+into that box. It does NOT say if the content is. So I will assume 
+the content is both the title and the p tag */
+.inner-tile:hover {
+  cursor: nesw-resize;
+  overflow: auto;
 }
 
 .chicken {
@@ -38,14 +49,8 @@ body {
   padding-right: 35px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 175%;
-}
-
 section {
   position: relative;
-  /* background-color: gray; */
 }
 
 p {
@@ -60,17 +65,44 @@ p {
   border-bottom: 1px solid #000000;
   border-left:   1px solid  #000000;
   font-size: 125%;
-  /* width: 125px; */
   text-align: center;
   margin-bottom: 10px;
 }
 
+.menu {
+  font-size: 175%;
+  text-align: center;
+}
+
+.categories {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 125%; /* should be smaller than menu title text */
+  text-align: left;
+  margin: 15px;
+}
 
 /* mobile */
 @media (max-width: 767px) {
+    .main-title {
+      display: none;
+    }
+    .mobile-title {
+      display: show;
+    }
+    .menu {
+      display: none;
+    }
+    .categories {
+      display: show;
+    }
+    
+    .title-region {
+      width: 100%;
+      border-left:   0px solid  #000000;
+    }
+
     .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
         float: left;
-        /* border: 1px solid black; */
       }
       .col-sm-1 {
         width: 8.33%;
@@ -112,9 +144,21 @@ p {
 
 /* tablet */
 @media (min-width: 768px) and (max-width: 991px) {
+    .main-title {
+      display: show;
+    }
+    .mobile-title {
+      display: none;
+    }
+    .menu {
+      display: show;
+    }
+    .categories {
+      display: none;
+    }
+
     .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
         float: left;
-        /* border: 1px solid black; */
       }
       .col-md-1 {
         width: 8.33%;
@@ -156,9 +200,21 @@ p {
 
 /* desktop */
 @media (min-width: 992px) {
+    .main-title {
+      display: show;
+    }
+    .mobile-title {
+      display: none;
+    }
+    .menu {
+      display: show;
+    }
+    .categories {
+      display: none;
+    }
+
     .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
         float: left;
-        /* border: 1px solid black; */
       }
       .col-lg-1 {
         width: 8.33%;
