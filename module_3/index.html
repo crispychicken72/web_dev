@@ -1,7 +1,3 @@
-<!-- md - desktop
-sm - tablet
-xs - mobile -->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,12 +18,10 @@ xs - mobile -->
   </head>
 <body>
   <header>
+
     <nav id="header-nav" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <!-- <a href="index.html" class="pull-left visible-md">
-            <div id="logo-img" alt="Logo image"></div>
-          </a> -->
 
           <div class="navbar-brand">
             <a href="index.html"><h1>Food, LLC</h1></a>
@@ -41,21 +35,21 @@ xs - mobile -->
         </div>
 
         <div class="visible-xs">
-
-          <div id="collapsable-nav" class="collapse navbar-collapse collapsable-area">
-            <ul id="nav-list" class="nav navbar-nav navbar-right">
+          <div id="collapsable-nav" class="collapse navbar-collapse collapsable-area collapsable-navbar">
+            <ul id="nav-list" class="nav navbar-nav navbar-right text-center">
               <li>
-                <a href="">
-                  <span class="glyphicon glyphicon-cutlery"></span>
-                  Chicken
+                <a href="#chicken-section">
+                  <span class="text-center">Chicken</span>
                 </a>
-                <a href="">
-                  <span class="glyphicon glyphicon-cutlery"></span>
-                  Beef
+              </li>
+              <li>
+                <a href="#beef-section">
+                  <span class="text-center">Beef</span>
                 </a>
-                <a href="">
-                  <span class="glyphicon glyphicon-cutlery"></span>
-                  Sushi
+              </li>
+              <li>
+                <a href="#sushi-section">
+                  <span class="text-center">Sushi</span>
                 </a>
               </li>
             </ul>
@@ -64,54 +58,44 @@ xs - mobile -->
       </div>
     </nav>
 
-  </header>
+    <h2 id="menu-title" class="text-center">Our Menu</h2>
 
-  <h1>Hello Coursera!</h1>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
-  <p>asdfasfasdfaf <br></p>
+    <div class="container">
+      <div class="row">
+        <section id="chicken-section" class="menu-tile col-md-4 col-sm-6 col-xs-12">
+          <div class="tile-content">
+            <h3 class="text-center">Chicken</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <br>
+              (End of Chicken Section) <a href="#menu-title">Back to Top</a>
+            </p>
+          </div>
+        </section>
+        <section id="beef-section" class="menu-tile col-md-4 col-sm-6 col-xs-12">
+          <div class="tile-content">
+            <h3 class="text-center">Beef</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <br>
+              (End of Beef Section) <a href="#menu-title">Back to Top</a>
+            </p>
+          </div>
+        </section>
+        <section id="sushi-section" class="menu-tile col-md-4 col-sm-12 col-xs-12">
+          <div class="tile-content">
+            <h3 class="text-center">Sushi</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <br>
+              (End of Sushi Section) <a href="#menu-title">Back to Top</a>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <a href="#menu-title"><p class="text-center">Back to Top</p></a>
+    </div>
+
+  </header>
 
   <!-- jQuery (Bootstrap JS plugins depend on it) -->
   <script src="js/jquery-1.11.3.min.js"></script>
