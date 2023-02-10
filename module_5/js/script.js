@@ -14,6 +14,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 var dc = {};
 
 var homeHtmlUrl = "snippets/home-snippet.html";
+var aboutHtmlUrl = "snippets/about.html";
 var allCategoriesUrl =
   "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
 var categoriesTitleHtml = "snippets/categories-title-snippet.html";
@@ -150,6 +151,103 @@ function chooseRandomCategory (categories) {
   return categories[randomArrayIndex];
 }
 
+dc.loadRandomRating = function () {
+  showLoading("#main-content");
+
+
+
+
+  $ajaxUtils.sendGetRequest(
+    homeHtmlUrl,
+    function (homeHtml) {
+      $ajaxUtils.sendGetRequest(
+        aboutHtmlUrl,
+        function (aboutHtml) {
+
+          console.log("SLDFKJSDLFK");
+          console.log(aboutHtml);
+
+          var randNum = Math.random();
+          // we want it to only ever be values 0 - 0.99 and never 1
+          if (randNum == 1) {
+            randNum = 0.99;
+          }
+
+          var aboutHtmlToInsertIntoMainPage = aboutHtml;
+
+          // random stars will only ever be 1,2,3,4,5
+          var randNumStars = Math.floor(randNum * 5) + 1;
+          for (var i = 1; i <= 5; i++) {
+            if (i <= randNumStars) {
+              aboutHtmlToInsertIntoMainPage = insertProperty(aboutHtmlToInsertIntoMainPage,
+                            "class" + i,
+                            "fa fa-star");
+            } else {
+              aboutHtmlToInsertIntoMainPage = insertProperty(aboutHtmlToInsertIntoMainPage,
+                            "class" + i,
+                            "fa fa-star-o");
+
+            }
+          }
+
+          insertHtml("#main-content", aboutHtmlToInsertIntoMainPage);
+        },
+        false);
+    },
+    false);
+
+
+  // Load home snippet page
+  $ajaxUtils.sendGetRequest(
+    homeHtmlUrl,
+    function (homeHtml) {
+
+  // $ajaxUtils.sendGetRequest(
+  //   allCategoriesUrl,
+  //   buildAndShowCategoriesHTML);
+
+
+  // Load home snippet page
+  // $ajaxUtils.sendGetRequest(
+  //   aboutHtmlUrl,
+  //   function (aboutHtml) {
+
+      // console.log("SLDFKJSDLFK");
+      // console.log(homeHtml);
+
+      // var randNum = Math.random();
+      // // we want it to only ever be values 0 - 0.99 and never 1
+      // if (randNum == 1) {
+      //   randNum = 0.99;
+      // }
+
+      // var aboutHtmlToInsertIntoMainPage = aboutHtml;
+
+      // // random stars will only ever be 1,2,3,4,5
+      // var randNumStars = Math.floor(randNum * 5) + 1;
+      // for (var i = 1; i <= 5; i++) {
+      //   if (i <= randNumStars) {
+      //     aboutHtmlToInsertIntoMainPage = insertProperty(aboutHtmlToInsertIntoMainPage,
+      //                   "class" + i,
+      //                   "fa fa-star");
+      //   } else {
+      //     aboutHtmlToInsertIntoMainPage = insertProperty(aboutHtmlToInsertIntoMainPage,
+      //                   "class" + i,
+      //                   "fa fa-star-o");
+
+      //   }
+      // }
+      // for (var i = 1; i <= randNumStars; i++) {
+      // }
+    }
+  );
+
+
+  // showLoading("#main-content");
+  // $ajaxUtils.sendGetRequest(
+  //   allCategoriesUrl,
+  //   buildAndShowCategoriesHTML);
+};
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
