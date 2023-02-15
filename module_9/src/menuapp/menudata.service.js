@@ -14,9 +14,6 @@ function MenuDataService($q, $timeout, $http) {
           method: "GET",
           url: "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json"
       }).then(function (resp) {
-          console.log("service.getAllCategories");
-          console.log(resp.data);
-          
           return resp.data;
       });
   };
@@ -26,9 +23,6 @@ function MenuDataService($q, $timeout, $http) {
           method: "GET",
           url: "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/" + categoryShortName + ".json"
       }).then(function (resp) {
-          console.log("service.getItemsForCategory");
-          console.log(resp.data.menu_items);
-
           return resp.data.menu_items;
       });
   };

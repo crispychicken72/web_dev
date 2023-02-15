@@ -9,7 +9,7 @@ ItemDetailController.$inject = ['$stateParams', '$scope', 'subitems'];
 function ItemDetailController($stateParams, $scope, subitems) {
   var itemDetail = this;
 
-  $scope.foo = subitems;
+  $scope.subitems = subitems;
 }
 
 })();
