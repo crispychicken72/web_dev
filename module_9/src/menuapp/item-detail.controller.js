@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('ShoppingList')
+angular.module('MenuApp')
 .controller('ItemDetailController', ItemDetailController);
 
 // Version with resolving to 1 item based on $stateParams in route config
