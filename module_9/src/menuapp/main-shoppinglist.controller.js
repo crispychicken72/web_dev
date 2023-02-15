@@ -5,11 +5,11 @@ angular.module('MenuApp')
 .controller('MainShoppingListController', MainShoppingListController);
 
 
-MainShoppingListController.$inject = ['MenuDataService', 'items'];
-function MainShoppingListController(MenuDataService, items) {
+MainShoppingListController.$inject = ['MenuDataService', 'categoryList'];
+function MainShoppingListController(MenuDataService, categoryList) {
   console.log("Here");
-  var mainList = this;
-  mainList.items = items;
+  var catListContr = this;
+  catListContr.categoryList = categoryList;
 }
 
 })();

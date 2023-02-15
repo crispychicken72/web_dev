@@ -20,30 +20,30 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Premade list page
-  .state('mainList', {
-    url: '/main-list',
+  .state('categories', {
+    url: '/categories',
     templateUrl: 'src/menuapp/templates/main-shoppinglist.template.html',
-    controller: 'MainShoppingListController as mainList',
+    controller: 'MainShoppingListController as catListContr',
     resolve: {
-      items: ['MenuDataService', function (MenuDataService) {
+      categoryList: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
       }]
     }
   })
 
   // Item detail
-  .state('mainList.itemDetail', {
-    url: '/item-detail/{itemId}',
+  .state('categories.items', {
+    url: '/categories/{categoryId}',
     templateUrl: 'src/menuapp/templates/item-detail.template.html',
     controller: 'ItemDetailController as itemDetail',
     params: {
-      itemId: null
+      categoryId: null
     },
     resolve: {
       subitems: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
         console.log('HERE');
-        console.log($stateParams.itemId);
-        return MenuDataService.getItemsForCategory($stateParams.itemId);
+        console.log($stateParams.categoryId);
+        return MenuDataService.getItemsForCategory($stateParams.categoryId);
       }]
     }
   });
