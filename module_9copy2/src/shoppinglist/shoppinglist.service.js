@@ -20,6 +20,18 @@ function ShoppingListService($q, $timeout, $http) {
           return resp.data;
       });
   };
+
+  service.getItemsForCategory = function(categoryShortName) {
+      return $http({
+          method: "GET",
+          url: "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/" + categoryShortName + ".json"
+      }).then(function (resp) {
+          console.log("service.getItemsForCategory");
+          console.log(resp.data.menu_items);
+
+          return resp.data.menu_items;
+      });
+  };
 }
 
 })();

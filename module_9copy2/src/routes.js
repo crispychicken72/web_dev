@@ -31,15 +31,22 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     }
   })
 
-  // // Item detail
-  // .state('mainList.itemDetail', {
-  //   // url: '/item-detail/{itemId}',
-  //   templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-  //   controller: 'ItemDetailController as itemDetail',
-  //   params: {
-  //     itemId: null
-  //   }
-  // });
+  // Item detail
+  .state('mainList.itemDetail', {
+    url: '/item-detail/{itemId}',
+    templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
+    controller: 'ItemDetailController as itemDetail',
+    params: {
+      itemId: null
+    },
+    resolve: {
+      subitems: ['$stateParams', 'ShoppingListService', function ($stateParams, ShoppingListService) {
+        console.log('HERE');
+        console.log($stateParams.itemId);
+        return ShoppingListService.getItemsForCategory($stateParams.itemId);
+      }]
+    }
+  });
 
 }
 

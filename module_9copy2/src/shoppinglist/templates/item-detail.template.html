@@ -1,3 +1,7 @@
-<!-- <div>Item name: {{ itemDetail.name }}</div>
-<div>Item quantity: {{ itemDetail.quantity }}</div>
-<div>Item description: {{ itemDetail.description }}</div> -->
+<br>
+<h3 ng-if="foo.length != 0">Items in Category</h3>
+<ul>
+    <li ng-repeat="item in foo">
+        {{ item.name }}
+    </li>
+</ul>
