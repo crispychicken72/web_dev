@@ -25,8 +25,8 @@ function routeConfig ($stateProvider) {
       controller: 'MenuController2',
       controllerAs: 'menuCtrl2',
       resolve: {
-        menuCategories: ['MenuService', function (MenuService) {
-          return MenuService.getCategories();
+        allItems: ['MenuService', function (MenuService) {
+          return MenuService.getAllItems();
         }]
       }
     })

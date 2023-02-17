@@ -8,6 +8,9 @@ angular.module('common')
 MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
+  
+
+  service.pref = {};
 
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
@@ -15,24 +18,26 @@ function MenuService($http, ApiPath) {
     });
   };
 
-
   service.getMenuItems = function (category) {
     return $http.get(ApiPath + '/menu_items/' + category + '.json').then(function (response) {
       return response.data;
     });
   };
 
-  service.getSpecificItem = function (shortName) {
-    var categoryAndItemArr = shortName.split(/(\d.*)/, 2);
-    var categoryShortName = categoryAndItemArr[0];
-    var menuNumber = categoryAndItemArr[1];
-    
-    var remainingUrl = '/menu_items/' + categoryShortName  + '/menu_items/' + menuNumber + '.json';
-
-    return $http.get(ApiPath + remainingUrl).then(function (response) {
+  service.getAllItems = function () {
+    return $http.get(ApiPath + '/menu_items.json').then(function (response) {
       return response.data;
     });
   };
+
+  service.savePreference = function (pref) {
+    service.pref = pref;
+  };
+
+  service.getPreference = function (pref) {
+    return service.pref;
+  };
+
 
 }
 
