@@ -1,0 +1,21 @@
+<div class="container">
+    <h2 id="menu-categories-title" class="text-center">Preference Info</h2>
+
+    <div ng-if="!isPrefEmpty">
+        <h3 class="white-text" >First: {{ preference.firstName }}</h3>
+        <h3 class="white-text" >Last: {{ preference.lastName}}</h3>
+        <h3 class="white-text" >Email: {{ preference.email}}</h3>
+        <h3 class="white-text" >Phone: {{ preference.phone}}</h3>
+        <h3 class="white-text" >Favorite Menu Item Number: {{ preference.favMenuNum }}</h3>
+        <h3 class="white-text" >Favorite Menu Item Name: {{ preference.favMenuNumName }}</h3>
+        <h3 class="white-text" >Favorite Menu Item Description: {{ preference.favMenuNumDescr }}</h3>
+        <div class="menu-item-photo">
+            <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{category}}/{{itemNum}}.jpg">
+        </div>
+    </div>
+    <div ng-if="isPrefEmpty">
+        <h3 class="white-text">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h3>
+    </div>
+  
+  </div>
+  
