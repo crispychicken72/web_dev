@@ -81,4 +81,30 @@ WARNING!!! WARNING!!!
     }
   }
 
+  console.log("---Optional Solution---");
+  const result = names.reduce((accumulator, currElem) => {
+    var holdingVal = accumulator;
+    if (accumulator == undefined) {
+      holdingVal = { hello: [], bye: [] };
+    }
+
+    if (currElem.charAt(0).toLowerCase() == 'j') {
+      holdingVal.bye.push(window.byeSpeaker.speakSimple(currElem));
+      return holdingVal;
+    } else {
+      holdingVal.hello.push(window.helloSpeaker.speakSimple(currElem));
+      return holdingVal;
+    }
+  }, undefined);
+
+  console.log("-Bye array contents-");
+  for (var k = 0; k < result.bye.length; k++) {
+    console.log(result.bye[k]);
+  }
+  console.log("-hello array contents-");
+  for (var l = 0; l < result.hello.length; l++) {
+    console.log(result.hello[l]);
+  }
+
+
 })(window);
