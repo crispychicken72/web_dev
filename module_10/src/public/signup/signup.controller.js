@@ -9,7 +9,7 @@ function SignUpController($scope, allItems, MenuService) {
   var signUp = this;
   var shortNameList = [];
   var fields = Object.keys(allItems);
-  var menuItemToTitleDescr = {};
+  signUp.menuItemToTitleDescr = {};
 
   $scope.hasSubmitted = false;
 
@@ -18,7 +18,7 @@ function SignUpController($scope, allItems, MenuService) {
     var subMenuItems = allItems[shortName].menu_items;
     for (var j = 0; j < subMenuItems.length; j++) {
       shortNameList.push(subMenuItems[j].short_name);
-      menuItemToTitleDescr[subMenuItems[j].short_name] = {
+      signUp.menuItemToTitleDescr[subMenuItems[j].short_name] = {
         "name": subMenuItems[j].name,
         "description": subMenuItems[j].description
       };
@@ -32,13 +32,10 @@ function SignUpController($scope, allItems, MenuService) {
     value.$setValidity('favMenuNum', isValid);
 
     if (isValid) {
-      $scope.stored.user.favMenuNumName = menuItemToTitleDescr[value.$viewValue].name;
-      $scope.stored.user.favMenuNumDescr = menuItemToTitleDescr[value.$viewValue].description;
+      $scope.stored.user.favMenuNumName = signUp.menuItemToTitleDescr[value.$viewValue].name;
+      $scope.stored.user.favMenuNumDescr = signUp.menuItemToTitleDescr[value.$viewValue].description;
     }
-    console.log($scope.stored);
   }
-
-  console.log($scope);
 
   $scope.submit = function() {
     console.log($scope.stored.user);
