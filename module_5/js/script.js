@@ -154,9 +154,6 @@ function chooseRandomCategory (categories) {
 dc.loadRandomRating = function () {
   showLoading("#main-content");
 
-
-
-
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
     function (homeHtml) {
@@ -189,6 +186,10 @@ dc.loadRandomRating = function () {
 
             }
           }
+
+          aboutHtmlToInsertIntoMainPage = insertProperty(aboutHtmlToInsertIntoMainPage,
+                        "rating",
+                        randNumStars + "-star rating");
 
           insertHtml("#main-content", aboutHtmlToInsertIntoMainPage);
         },
