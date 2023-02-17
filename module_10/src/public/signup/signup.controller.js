@@ -2,10 +2,10 @@
 "use strict";
 
 angular.module('public')
-.controller('MenuController2', MenuController2);
+.controller('SignUpController', SignUpController);
 
-MenuController2.$inject = ['$scope', 'allItems', 'MenuService'];
-function MenuController2($scope, allItems, MenuService) {
+SignUpController.$inject = ['$scope', 'allItems', 'MenuService'];
+function SignUpController($scope, allItems, MenuService) {
   var signUp = this;
   var shortNameList = [];
   var fields = Object.keys(allItems);
@@ -33,9 +33,6 @@ function MenuController2($scope, allItems, MenuService) {
     MenuService.savePreference($scope.stored.user);
     $scope.hasSubmitted = true;
   }
-  // $scope.stored.submit = function() {
-  //   MenuService.savePreference($scope.newsletterForm);
-  // }
 
 }
 

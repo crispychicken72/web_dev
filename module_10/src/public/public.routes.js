@@ -19,11 +19,11 @@ function routeConfig ($stateProvider) {
       url: '/',
       templateUrl: 'src/public/home/home.html'
     })
-    .state('public.menu2', {
-      url: '/menu2',
-      templateUrl: 'src/public/menu2/menu2.html',
-      controller: 'MenuController2',
-      controllerAs: 'menuCtrl2',
+    .state('public.signup', {
+      url: '/signup',
+      templateUrl: 'src/public/signup/signup.html',
+      controller: 'SignUpController',
+      controllerAs: 'signupCtrl',
       resolve: {
         allItems: ['MenuService', function (MenuService) {
           return MenuService.getAllItems();
@@ -51,19 +51,6 @@ function routeConfig ($stateProvider) {
           return MenuService.getMenuItems($stateParams.category);
         }]
       }
-    })
-    .state('public.signup', {
-      url: '/sign-up',
-      templateUrl: 'src/public/sign-up/sign-up.html',
-      controller: 'SignUpController',
-      controllerAs: 'signUpCtrl',
-      // resolve: {
-      //   menuCategories: ['MenuService', function (MenuService) {
-      //     return MenuService.getCategories();
-      //   }]
-      // }
-      // controller: 'SignUpController',
-      // controllerAs: 'signupCtrl'
     });
-}
+  }
 })();
